@@ -6,20 +6,20 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 
 ## Work accepted for publication at the ML4H Workshop, NeurIPS 2020 with an oral spotlight!
 
-- _ArXiv Pre-print: ** COMING SOON **_
-- _ML4H Poster: ** COMING SOON **_
-- _ML4H Slides: ** COMING SOON **_
-- _Code: <https://github.com/neerajwagh/eeg-gcnn>_
-- _Final Models, Pre-computed Features, Training Metadata:
-- _Raw Data: <http://fcon_1000.projects.nitrc.org/indi/retro/MPI_LEMON.html> (no registration needed), <https://www.isip.piconepress.com/projects/tuh_eeg/downloads/tuh_eeg_abnormal/> (register at <https://www.isip.piconepress.com/projects/tuh_eeg/html/request_access.php>)_
+- ArXiv Pre-print: ** COMING SOON **
+- ML4H Poster: ** COMING SOON **
+- ML4H Slides: ** COMING SOON **
+- Code: [GitHub Repo](https://github.com/neerajwagh/eeg-gcnn)
+- Final Models, Pre-computed Features, Training Metadata: [FigShare .zip](https://figshare.com/articles/software/EEG-GCNN_Supporting_Resources_for_Reproducibility/13251452)
+- Raw Data: [MPI LEMON](http://fcon_1000.projects.nitrc.org/indi/retro/MPI_LEMON.html) (no registration needed), [TUH EEG Abnormal Corpus](https://www.isip.piconepress.com/projects/tuh_eeg/downloads/tuh_eeg_abnormal/) ([needs registration](https://www.isip.piconepress.com/projects/tuh_eeg/html/request_access.php))
 
 ### This repository contains code to load final models and reproduce held-out test set results reported in Table 2 of the ML4H paper. All the code required to run an experiment is contained entirely inside the corresponding experiment folder. The full end-to-end framework that builds predictive models for scalp-EEG signal classification tasks is work in progress, and will be released as a separate repository when complete.
 
 ### Follow these steps to execute experiments and reproduce results
 
-1. Download 1) the pre-computed feature arrays for all 10-second windows in the dataset (power spectral density features, geodesic electrode distances, spectral coherence values), 2) final models used in Table 2 comparisons, and 3) training metadata (which window maps to which subject, target labels, sample indices, etc.) from FigShare:
+1. Download 1) the pre-computed feature arrays for all 10-second windows in the dataset (power spectral density features, geodesic electrode distances, spectral coherence values), 2) final models used in Table 2 comparisons, and 3) training metadata (which window maps to which subject, target labels, sample indices, etc.) from [FigShare](https://figshare.com/articles/software/EEG-GCNN_Supporting_Resources_for_Reproducibility/13251452)
 2. Place all the feature files and relevant model files inside the directory of the experiment you want to execute. The code expects these files to be present in the experiment's root folder.
-3. Ensure your execution environment has the following Python dependencies installed and working (or alternatively setup a Docker container with the given Dockerfile):
+3. Ensure your execution environment has the following Python dependencies installed and working:
     - Python 3.x
     - PyTorch (at least 1.4.0 for PyTorch Geometric to work)
     - PyTorch Geometric
@@ -44,9 +44,8 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 ### Contact
 
 - Issues regarding non-reproducibility of results or support with the codebase should be emailed to _nwagh2@illinois.edu_
-- Neeraj: Email: _nwagh2@illinois.edu_ / Website: _<http://neerajwagh.com/>_ / Twitter: _@neeraj\_wagh_ / GScholar: _<https://scholar.google.com/citations?hl=en&user=lCy5VsUAAAAJ>_
-- Yoga: Email: _varatha2@illinois.edu_ / Website: _<https://sites.google.com/view/yoga-personal/home>_ / GScholar: _<https://scholar.google.com/citations?user=XwL4dBgAAAAJ&hl=en>_
-
+- Neeraj: [Email](nwagh2@illinois.edu) / [Website](http://neerajwagh.com/) / [Twitter](https://twitter.com/neeraj_wagh) / [Google Scholar](https://scholar.google.com/citations?hl=en&user=lCy5VsUAAAAJ)
+- Yoga: [Email](varatha2@illinois.edu) / [Website](https://sites.google.com/view/yoga-personal/home) / [Google Scholar](https://scholar.google.com/citations?user=XwL4dBgAAAAJ&hl=en)
 ### Citation
 
 N. Wagh, Y. Varatharajah. _EEG-GCNN: Augmenting Electroencephalogram-based Neurological Disease Diagnosis using a Domain-guided Graph Convolutional Neural Network_. Proceedings of the ML4H Workshop, NeurIPS Conference 2020
