@@ -1,0 +1,7 @@
+*.ckpt
+*.npy
+*.csv
+*.tsv
+*zip
+__pycache__/
+figshare_upload/
