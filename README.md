@@ -23,7 +23,6 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
     - Python 3.x
     - PyTorch (at least 1.4.0 for PyTorch Geometric to work)
     - PyTorch Geometric
-    - Tensorboard
     - Scikit-learn
 4. Enter the directory of the experiment you want to run.
 5. Execute `$ python heldout_test_run.py` to run the saved 10 final models on the held-out 30% test set of subjects using the pre-computed features. For trivial classifiers, run `$ python chance_level_classification.py`. The mean and standard deviation values reported in Table 2 of the paper will be printed at the end of execution. See notes below for more details.
