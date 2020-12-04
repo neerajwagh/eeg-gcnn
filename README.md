@@ -6,7 +6,7 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 
 ## Work accepted for publication at the ML4H Workshop, NeurIPS 2020 with an oral spotlight!
 
-- ArXiv Pre-print: ** COMING SOON **
+- ArXiv Pre-print: <https://arxiv.org/abs/2011.12107>
 - ML4H Poster: ** COMING SOON **
 - ML4H Slides: ** COMING SOON **
 - Code: [GitHub Repo](https://github.com/neerajwagh/eeg-gcnn)
