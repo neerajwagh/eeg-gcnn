@@ -4,7 +4,7 @@ _*Authors*: Neeraj Wagh, Yogatheesan Varatharajah_
 
 _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-Champaign_
 
-## Work accepted for publication at the ML4H Workshop, NeurIPS 2020 with an oral spotlight!
+## Work accepted in proceedings of the ML4H Workshop, NeurIPS 2020 with an oral spotlight!
 
 - ArXiv Pre-print: <https://arxiv.org/abs/2011.12107>
 - PMLR Paper: <http://proceedings.mlr.press/v136/wagh20a.html>
