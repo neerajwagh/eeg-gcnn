@@ -8,8 +8,8 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 
 - ArXiv Pre-print: <https://arxiv.org/abs/2011.12107>
 - PMLR Paper: <http://proceedings.mlr.press/v136/wagh20a.html>
-- ML4H Poster: ** COMING SOON **
-- ML4H Slides: ** COMING SOON **
+- ML4H Poster: <https://drive.google.com/file/d/14nuAQKiIud3p6-c8r9WLV2tAvCyRwRev/view?usp=sharing>
+- ML4H Slides: <https://slideslive.com/38941020/eeggcnn-augmenting-electroencephalogrambased-neurological-disease-diagnosis-using-a-domainguided-graph-convolutional-neural-network?ref=account-folder-62123-folders>
 - Code: [GitHub Repo](https://github.com/neerajwagh/eeg-gcnn)
 - Final Models, Pre-computed Features, Training Metadata: [FigShare .zip](https://figshare.com/articles/software/EEG-GCNN_Supporting_Resources_for_Reproducibility/13251452)
 - Raw Data: [MPI LEMON](http://fcon_1000.projects.nitrc.org/indi/retro/MPI_LEMON.html) (no registration needed), [TUH EEG Abnormal Corpus](https://www.isip.piconepress.com/projects/tuh_eeg/downloads/tuh_eeg_abnormal/) ([needs registration](https://www.isip.piconepress.com/projects/tuh_eeg/html/request_access.php))
