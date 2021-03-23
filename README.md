@@ -15,9 +15,9 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 - Final Models, Pre-computed Features, Training Metadata: [FigShare .zip](https://figshare.com/articles/software/EEG-GCNN_Supporting_Resources_for_Reproducibility/13251452)
 - Raw Data: [MPI LEMON](http://fcon_1000.projects.nitrc.org/indi/retro/MPI_LEMON.html) (no registration needed), [TUH EEG Abnormal Corpus](https://www.isip.piconepress.com/projects/tuh_eeg/downloads/tuh_eeg_abnormal/) ([needs registration](https://www.isip.piconepress.com/projects/tuh_eeg/html/request_access.php))
 
-### This repository contains code to load final models and reproduce held-out test set results reported in Table 2 of the ML4H paper. All the code required to run an experiment is contained entirely inside the corresponding experiment folder. The full end-to-end framework that builds predictive models for scalp-EEG signal classification tasks is work in progress, and will be released as a separate repository when complete.
+### Example code to process your own EEG datasets and generate features for EEG-GCNN model (or any other model) training/evaluation: 1) prepare_data_for_eeg-gcnn.ipynb and 2) eeg_pipeline.py
 
-### Follow these steps to execute experiments and reproduce results
+### Follow these steps to execute model comparison experiments and reproduce reported results
 
 1. Download 1) the pre-computed feature arrays for all 10-second windows in the dataset (power spectral density features, geodesic electrode distances, spectral coherence values), 2) final models used in Table 2 comparisons, and 3) training metadata (which window maps to which subject, target labels, sample indices, etc.) from [FigShare](https://figshare.com/articles/software/EEG-GCNN_Supporting_Resources_for_Reproducibility/13251452)
 2. Place all the feature files and relevant model files inside the directory of the experiment you want to execute. The code expects these files to be present in the experiment's root folder.
@@ -31,6 +31,7 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 
 ### Notes
 
+- This repository contains code to load final models and reproduce held-out test set results reported in Table 2 of the ML4H paper. All the code required to run an experiment is contained entirely inside the corresponding experiment folder.
 - All experiments were run and results were reported for a fixed seed (42) in the entire pipeline. We have not repeated the experiments multiple times using different seeds due to time constraints. The seed determines 1) which subjects (out of the total available in the pooled dataset) are held-out for final testing, and 2) which subjects form the 10 train/validation folds within 10-fold cross-validation. Therefore, to reproduce reported results _exactly_, you will need to use seed as 42 since this will ensure evaluation is done on the subjects that were not seen during training of the released final models.
 - We encourage you to 1) closely inspect the process flow depicted in Figure 4 to fully understand the evaluation setup, and 2) train new models using different seeds.
 - The EEG-GCNN model definition can be found in EEGGraphConvNet.py in the shallow/deep EEG-GCNN experiment folders.
