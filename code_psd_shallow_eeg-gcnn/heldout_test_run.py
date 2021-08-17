@@ -5,6 +5,7 @@ import numpy as np
 import torch
 from joblib import load
 import statistics as stats
+from sklearn import preprocessing
 
 import torch.backends.cudnn as cudnn
 cudnn.enabled = True
@@ -156,6 +157,18 @@ if __name__ == "__main__":
 	
 	X = load("psd_features_data_X", mmap_mode='r')
 	y = load("labels_y", mmap_mode='r')
+
+	# normalize psd_features_data_X
+	normd_x = []
+	for i in range(len(y)):
+		arr = X[i, :]
+		arr = arr.reshape(1, -1)
+		arr2 = preprocessing.normalize(arr)
+		arr2 = arr2.reshape(48)
+		normd_x.append(arr2)
+	
+	norm = np.array(normd_x)
+	X = norm.reshape(len(y), 48)
 
 	# get 0/1 labels for pytorch, ensure mapping is the same between train and test
 	label_mapping, y = np.unique(y, return_inverse = True)

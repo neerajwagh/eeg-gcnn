@@ -115,7 +115,7 @@ class EEGGraphDataset(Dataset):
 		spec_coh_values = self.spec_coh_values[idx, :]
 		# combine edge weights and spect coh values into one value/ one E x 1 tensor
 		edge_weights = self.distances + spec_coh_values
-		edge_weights = torch.tensor(edge_weights, dtype=torch.long)
+		edge_weights = torch.tensor(edge_weights)
 
 		# NOTE: taken from https://pytorch-geometric.readthedocs.io/en/latest/notes/introduction.html#
 		# https://pytorch-geometric.readthedocs.io/en/latest/modules/data.html

@@ -18,6 +18,7 @@ from torch_geometric.data import DataLoader
 from sklearn.metrics import make_scorer
 from sklearn.metrics import balanced_accuracy_score, auc, accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, roc_curve
 from torchvision.transforms import Compose, ToTensor
+from sklearn import preprocessing
 
 # after each epoch, record all the metrics on both train and validation sets
 def collect_metrics(y_probs_test, y_true_test, y_pred_test, sample_indices_test,
@@ -156,6 +157,18 @@ if __name__ == "__main__":
 	
 	X = load("psd_features_data_X", mmap_mode='r')
 	y = load("labels_y", mmap_mode='r')
+
+	# normalize psd_features_data_X
+	normd_x = []
+	for i in range(len(y)):
+		arr = X[i, :]
+		arr = arr.reshape(1, -1)
+		arr2 = preprocessing.normalize(arr)
+		arr2 = arr2.reshape(48)
+		normd_x.append(arr2)
+	
+	norm = np.array(normd_x)
+	X = norm.reshape(len(y), 48)
 
 	# get 0/1 labels for pytorch, ensure mapping is the same between train and test
 	label_mapping, y = np.unique(y, return_inverse = True)
