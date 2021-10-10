@@ -5,3 +5,6 @@
 *zip
 __pycache__/
 figshare_upload/
+*/labels_y
+*/psd_features_data_X
+*/standard_1010.tsv.txt
