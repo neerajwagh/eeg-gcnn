@@ -19,6 +19,7 @@ from sklearn.metrics import make_scorer
 from sklearn.metrics import balanced_accuracy_score, auc, accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, roc_curve
 from torchvision.transforms import Compose, ToTensor
 from sklearn import preprocessing
+from tqdm import tqdm
 
 # after each epoch, record all the metrics on both train and validation sets
 def collect_metrics(y_probs_test, y_true_test, y_pred_test, sample_indices_test,
