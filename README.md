@@ -14,7 +14,7 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 - Code: [GitHub Repo](https://github.com/neerajwagh/eeg-gcnn)
 - Final Models, Pre-computed Features, Training Metadata: [FigShare .zip](https://figshare.com/articles/software/EEG-GCNN_Supporting_Resources_for_Reproducibility/13251452)
 - Raw Data: [MPI LEMON](http://fcon_1000.projects.nitrc.org/indi/retro/MPI_LEMON.html) (no registration needed), [TUH EEG Abnormal Corpus](https://www.isip.piconepress.com/projects/tuh_eeg/downloads/tuh_eeg_abnormal/) ([needs registration](https://www.isip.piconepress.com/projects/tuh_eeg/html/request_access.php))
-
+- DGL Implementation of EEG-GCNN: [DGL EEG-GCNN page](https://github.com/dmlc/dgl/tree/master/examples/pytorch/eeg-gcnn)
 ### Example code to process your own EEG datasets and generate features for EEG-GCNN model (or any other model) training/evaluation: 1) prepare_data_for_eeg-gcnn.ipynb and 2) eeg_pipeline.py
 
 ### Follow these steps to execute model comparison experiments and reproduce reported results
@@ -43,12 +43,19 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
 - For the FCNN experiment, the model is contained in the EEGConvNet.py file (although it is not a convolutional network). Changing the class/file name would make the saved models unusable and hence has been left unchanged.
 - Raw channels are converted to an 8-channel bipolar montage before being used for modeling. While these 8 channels were derived in the 10-20 system, the spatial connectivity between these montage channels is calculated between the electrodes in the center of the montage channel pair in the 10-10 system. The idealized locations of the scalp electrodes in the 10-10 configuration system are taken from standard_1010.tsv file, and used in get_sensor_distances() in EEGGraphDataset.py.
 
+### Update
+After removing type cast error in edge weights calculation, the performance stays similar to what is published in the paper.
+|                  | AUC          | Precision    | Recall       | F-1          | Bal. Accuracy |
+|------------------|--------------|--------------|--------------|--------------|---------------|
+| Shallow EEG-GCNN | 0.871(0.001) | 0.989(0.003) | 0.677(0.018) | 0.804(0.011) | 0.810(0.003)  |
+| Deep EEG-GCNN    | 0.863(0.001) | 0.988(0.006) | 0.660(0.031) | 0.791(0.020) | 0.800(0.002)  |
+
 ### Contact
 
 - Issues regarding non-reproducibility of results or support with the codebase should be emailed to _nwagh2@illinois.edu_
 - Neeraj: nwagh2@illinois.edu / [Website](http://neerajwagh.com/) / [Twitter](https://twitter.com/neeraj_wagh) / [Google Scholar](https://scholar.google.com/citations?hl=en&user=lCy5VsUAAAAJ)
 - Yoga: varatha2@illinois.edu / [Website](https://sites.google.com/view/yoga-personal/home) / [Google Scholar](https://scholar.google.com/citations?user=XwL4dBgAAAAJ&hl=en)
-
+- John: wei33@illinois.edu
 ### Citation
 
 Wagh, N. & Varatharajah, Y.. (2020). EEG-GCNN: Augmenting Electroencephalogram-based Neurological Disease Diagnosis using a Domain-guided Graph Convolutional Neural Network. Proceedings of the Machine Learning for Health NeurIPS Workshop, in PMLR 136:367-378 Available from http://proceedings.mlr.press/v136/wagh20a.html.
