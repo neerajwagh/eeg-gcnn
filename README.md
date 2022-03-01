@@ -26,6 +26,7 @@ _*Affiliation*: Department of Bioengineering, University of Illinois at Urbana-C
     - PyTorch (at least 1.4.0 for PyTorch Geometric to work)
     - PyTorch Geometric
     - Scikit-learn
+3. Alternatively - you can use the dockerfile provided for installing all dependencies.
 4. Enter the directory of the experiment you want to run.
 5. Execute `$ python heldout_test_run.py` to run the saved 10 final models on the held-out 30% test set of subjects using the pre-computed features. For trivial classifiers, run `$ python chance_level_classification.py`. The mean and standard deviation values reported in Table 2 of the paper will be printed at the end of execution. See notes below for more details.
 
