@@ -147,8 +147,8 @@ if __name__ == "__main__":
 	torch.cuda.set_device(DEVICE)
 	print('[MAIN] Using device:', DEVICE, torch.cuda.get_device_name(DEVICE))
 	
-	X = load("psd_features_data_X", mmap_mode='r')
-	y = load("labels_y", mmap_mode='r')
+	X = load("psd_features_data_X")
+	y = load("labels_y")
 
 	# normalize psd_features_data_X
 	normd_x = []
