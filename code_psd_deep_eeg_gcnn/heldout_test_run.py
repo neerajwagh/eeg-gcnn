@@ -25,7 +25,7 @@ from tqdm import tqdm
 def collect_metrics(y_probs_test, y_true_test, y_pred_test, sample_indices_test,
 					fold_idx, experiment_name):
 
-	dataset_index = pd.read_csv("master_metadata_index.csv")
+	dataset_index = pd.read_csv("../master_metadata_index.csv")
 
 	# create patient-level train and test dataframes
 	rows = [ ]
@@ -141,7 +141,7 @@ if __name__ == "__main__":
 	torch.manual_seed(SEED)
 	print("[MAIN] Numpy and PyTorch seed set to {} for reproducibility.".format(SEED))
 
-	MASTER_DATASET_INDEX = pd.read_csv("master_metadata_index.csv")
+	MASTER_DATASET_INDEX = pd.read_csv("../master_metadata_index.csv")
 	subjects = MASTER_DATASET_INDEX["patient_ID"].astype("str").unique()
 	print("[MAIN] Subject list fetched! Total subjects are {}...".format(len(subjects)))
 
@@ -156,8 +156,8 @@ if __name__ == "__main__":
 	torch.cuda.set_device(DEVICE)
 	print('[MAIN] Using device:', DEVICE, torch.cuda.get_device_name(DEVICE))
 	
-	X = load("psd_features_data_X", mmap_mode='r')
-	y = load("labels_y", mmap_mode='r')
+	X = load("../psd_features_data_X")
+	y = load("../labels_y")
 
 	# normalize psd_features_data_X
 	normd_x = []
