@@ -13,7 +13,7 @@ cudnn.deterministic = True
 
 from code_psd_shallow_eeg_gcnn.EEGGraphDataset import EEGGraphDataset
 from code_psd_shallow_eeg_gcnn.EEGGraphConvNet import EEGGraphConvNet
-from torch_geometric.loader import DataLoader
+from torch_geometric.data import DataLoader
 from torch.utils.data import WeightedRandomSampler
 from sklearn.metrics import make_scorer
 from sklearn.metrics import balanced_accuracy_score, auc, accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, roc_curve
