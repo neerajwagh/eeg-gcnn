@@ -58,7 +58,7 @@ RUN pip install torch-scatter==latest+cu102 -f https://pytorch-geometric.com/whl
 RUN pip install torch-sparse==latest+cu102 -f https://pytorch-geometric.com/whl/torch-1.7.0.html
 RUN pip install torch-cluster==latest+cu102 -f https://pytorch-geometric.com/whl/torch-1.7.0.html
 RUN pip install torch-spline-conv==latest+cu102 -f https://pytorch-geometric.com/whl/torch-1.7.0.html
-RUN pip install torch-geometric
+RUN pip install torch-geometric==1.7.2
 RUN pip install captum
 RUN pip install tensorboard
 
