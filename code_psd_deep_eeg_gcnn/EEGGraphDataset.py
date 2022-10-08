@@ -56,12 +56,12 @@ class EEGGraphDataset(Dataset):
 		a = np.array(self.distances)
 		self.distances = (a - np.min(a))/(np.max(a) - np.min(a))
 		# self.edge_weights = torch.tensor(self.distances, dtype=torch.long)
-		self.spec_coh_values = np.load("spec_coh_values.npy", allow_pickle=True)
+		self.spec_coh_values = np.load("../spec_coh_values.npy", allow_pickle=True)
 
 	# sensor distances don't depend on window ID
 	def get_sensor_distances(self):
 		import pandas as pd
-		coords_1010 = pd.read_csv("standard_1010.tsv.txt", sep='\t')
+		coords_1010 = pd.read_csv("../standard_1010.tsv.txt", sep='\t')
 		num_edges = self.edge_index.shape[1]
 		distances = [ ]
 		for edge_idx in range(num_edges): 
